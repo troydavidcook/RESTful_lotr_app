@@ -1,0 +1,12 @@
+<% include ./partials/header %>
+
+<div class="ui main container segment">
+    <% kings.forEach((king) => { %>
+      <h3><%= king.name %></h3>
+      <img src="<%= king.image %>" alt="">
+      <p><%= king.description %></p>
+      <a href="/kings/<%= king._id %>">Read more..</a>
+    <% }); %>
+</div>
+
+<% include ./partials/header %>

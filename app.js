@@ -90,7 +90,16 @@ app.put('/kings/:id', (req, res) => {
   });
 });
 
-app.delete
+app.delete('/kings/:id', (req, res) => {
+  const kingId = req.params.id;
+  King.findByIdAndRemove(kingId, (err) => {
+    if (err) {
+      console.log('Error: ', err);
+    } else {
+      res.redirect('/kings');
+    }
+  });
+});
 
 const port = process.env.PORT || 3000;
 

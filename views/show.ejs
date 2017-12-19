@@ -18,7 +18,9 @@
               </div>
             </div>
             <a class="ui black mini basic button" href="/kings/<%= king._id %>/edit">Edit</a>
-            <a class="ui red mini basic button delete" href="/kings/<%= king._id %>/edit">Delete</a>
+            <form class="delete" action="/kings/<%= king._id %>?_method=DELETE" method="POST">
+              <button class="ui red mini basic button" href="/kings">Delete</button>
+            </form>
     </div>
 </div>
 

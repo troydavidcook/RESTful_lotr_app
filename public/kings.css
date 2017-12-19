@@ -1,19 +1,33 @@
 body {
-  background: ivory;
+  background: rgba(253, 253, 253, 1);
   margin-top: 50px;
+}
+h1 {
+  margin: 15px auto;
 }
 
 p {
-  margin-bottom: 40px;
+  margin-bottom: 10px;
+  line-height: 1.6em;
 }
 
-/* .header {
-  margin-bottom: 20px; 
-} */
-
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
 
 img {
   max-width: 400px;
+  max-height: 400px:
+}
+
+.delete {
+  display: inline;
+}
+
+.add-new {
+  margin-bottom: 15px;
 }
 
 .ui.header.centered {
@@ -22,6 +36,11 @@ img {
 
 .ui.centered.large.image {
   margin-bottom: 30px;
+}
+
+.ui-main-container-segment-show {
+  margin: 0 50px;
+  max-width: 80%;
 }
 
 .decription-ui-two-column-centered-grid {

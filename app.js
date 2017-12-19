@@ -45,12 +45,52 @@ app.get('/kings', (req, res) => {
   });
 });
 
+app.get('/kings/new', (req, res) => {
+  res.render('new');
+});
+
+app.post('/kings', (req, res) => {
+  req.body.king.body = res.sanitize(req.body.king.body);
+  const { name, image, description } = req.body.king;
+  King.create(req.body.king, (err) => {
+    if (err) {
+      console.log('Error: ', err);
+    } else {
+      res.redirect('/kings');
+    }
+  });
+});
+
 app.get('/kings/:id', (req, res) => {
   const kingId = req.params.id;
   King.findById(kingId, (err, fetchedKing) => {
-    res.render('show', { king: fetchedKing })
+    res.render('show', { king: fetchedKing });
   });
 });
+
+app.get('/kings/:id/edit', (req, res) => {
+  const kingId = req.params.id;
+  King.findById(kingId, (err, fetchedKing) => {
+    if (err) {
+      console.log('Error: ', err);
+    } else {
+      res.render('edit', { king: fetchedKing });
+    }
+  });
+});
+
+app.put('/kings/:id', (req, res) => {
+  const kingId = req.params.id;
+  const newData = req.body.king;
+  req.body.king.body = req.sanitize(req.body.king.body);
+  King.findByIdAndUpdate(kingId, newData, (err) => {
+    if (err) {
+      console.log('Error: ', err);
+    } else res.redirect('/kings/:id');
+  });
+});
+
+app.delete
 
 const port = process.env.PORT || 3000;
 

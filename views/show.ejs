@@ -8,9 +8,17 @@
           <div class="">
               <img src="<%= king.image %>" class="ui centered large image" alt="">
           </div>
-          <div class=" decription ui two column centered grid">
-              <p class=""><%= king.description %></p>
-          </div>
+          <hr>
+          <div class="ui two column centered grid">
+            
+              <div class="column centered">
+                <div class="ui container">
+                  <p><%= king.description %></p>
+                </div>
+              </div>
+            </div>
+            <a class="ui black mini basic button" href="/kings/<%= king._id %>/edit">Edit</a>
+            <a class="ui red mini basic button delete" href="/kings/<%= king._id %>/edit">Delete</a>
     </div>
 </div>
 

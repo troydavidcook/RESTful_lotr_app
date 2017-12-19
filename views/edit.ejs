@@ -1,0 +1,19 @@
+<% include ./partials/header %>
+<div class="ui main container segment">
+  <form class="ui form" action="/kings/<%= king._id %>?_method=PUT" method="POST">
+      <div class="field">
+        <label>King's Name</label>
+        <input type="text" name="king[name]" value="<%= king.name %>">
+      </div>
+      <div class="field">
+        <label>Image Url</label>
+        <input type="text" name="king[image]" value="<%= king.image %>">
+      </div>
+      <div class="field">
+          <label>Description</label>
+          <textarea name="king[description]"><%= king.description %></textarea>
+      </div>
+      <a class="ui button mini green inverted" type="submit" href="/kings/<%= king._id%>">Edit</a>
+    </form>
+</div>  
+<% include ./partials/header %>

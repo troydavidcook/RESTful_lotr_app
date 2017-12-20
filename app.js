@@ -50,7 +50,7 @@ app.get('/kings/new', (req, res) => {
 });
 
 app.post('/kings', (req, res) => {
-  req.body.king.body = res.sanitize(req.body.king.body);
+  req.body.king.body = req.sanitize(req.body.king.body);
   const { name, image, description } = req.body.king;
   King.create(req.body.king, (err) => {
     if (err) {
@@ -86,7 +86,7 @@ app.put('/kings/:id', (req, res) => {
   King.findByIdAndUpdate(kingId, newData, (err) => {
     if (err) {
       console.log('Error: ', err);
-    } else res.redirect('/kings/:id');
+    } else res.redirect(`/kings/${kingId}`);
   });
 });
 

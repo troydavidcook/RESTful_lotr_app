@@ -8,12 +8,13 @@
     <% kings.forEach((king) => { %>
       <h3><%= king.name %></h3>
       <img src="<%= king.image %>" alt="">
+      <p><%= king.created.toDateString() %></p>
       <p><%= king.description.substring(0, 100) %>...</p>
       <a class="add-new" href="/kings/<%= king._id %>">Read more..</a>
       <hr>
     <% }); %>
     <div add-new>
-      <a class="ui button tiny blue inverted" href="/kings/new">Add New King</a>
+      <a class="ui button tiny green inverted" href="/kings/new">Add New King</a>
     </div>
 </div>
 

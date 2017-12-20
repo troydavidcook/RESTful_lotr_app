@@ -1,12 +1,19 @@
 body {
   background: rgba(253, 253, 253, 1);
   margin-top: 50px;
+  font-family: Spectral, serif;
 }
 h1 {
+  font-family: Spectral, Serif;
   margin: 15px auto;
 }
 
+h3 {
+  font-family: 'Spectral', serif;
+}
+
 p {
+  font-family: Spectral, serif;
   margin-bottom: 10px;
   line-height: 1.6em;
 }
@@ -27,6 +34,10 @@ img {
 
 .add-new {
   margin-bottom: 15px;
+}
+
+.ui.header {
+  font-family: 'Spectral';
 }
 
 .ui.header.centered {
